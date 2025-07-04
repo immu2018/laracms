@@ -81,4 +81,12 @@ class SiteSetting extends Model
     {
         return static::get('site_password_message', 'This site is password protected. Please enter the password to continue.');
     }
+
+    /**
+     * Check if site login is required
+     */
+    public static function isSiteLoginRequired(): bool
+    {
+        return static::get('site_login_required', false);
+    }
 }

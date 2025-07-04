@@ -50,7 +50,6 @@
                                         <tr>
                                             <th><input type="checkbox" id="select-all"></th>
                                             <th>Featured</th>
-                                            <th>Image</th>
                                             <th>Title</th>
                                             <th>Category</th>
                                             <th>Author</th>
@@ -65,28 +64,8 @@
                                             <tr>
                                                 <td><input type="checkbox" name="ids[]" value="{{ $post->id }}" class="row-checkbox"></td>
                                                 <td>
-                                                    @if($post->is_featured)
-                                                        <span class="badge bg-yellow-lt" title="Featured Post">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon>
-                                                            </svg>
-                                                            Featured
-                                                        </span>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                                <td>
                                                     @if($post->featured_image)
                                                         <img src="{{ asset('storage/' . $post->featured_image) }}" alt="Featured" style="max-width:40px;max-height:40px;object-fit:cover;" class="img-thumbnail">
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                                <td>
-                                                    @if($post->image)
-                                                        <img src="{{ asset('storage/' . $post->image) }}" alt="Image" style="max-width:40px;max-height:40px;object-fit:cover;" class="img-thumbnail">
                                                     @else
                                                         -
                                                     @endif
