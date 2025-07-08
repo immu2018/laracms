@@ -17,5 +17,15 @@
                 </button>
             </form>
         @endif
+        
+        {{-- User Logout --}}
+        @if(auth()->check())
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+                @csrf
+                <button type="submit" class="text-sm text-blue-600 hover:text-blue-800 font-medium px-3 py-1 border border-blue-300 rounded hover:bg-blue-50">
+                    👤 Logout ({{ auth()->user()->name }})
+                </button>
+            </form>
+        @endif
     </div>
 </header>

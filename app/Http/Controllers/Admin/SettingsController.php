@@ -14,6 +14,7 @@ class SettingsController extends Controller
             'site_password_enabled' => SiteSetting::get('site_password_enabled', false),
             'site_password' => SiteSetting::get('site_password', ''),
             'site_password_message' => SiteSetting::get('site_password_message', 'This site is password protected. Please enter the password to continue.'),
+            'site_login_required' => SiteSetting::get('site_login_required', false),
         ];
 
         return view('admin.settings.index', compact('settings'));
@@ -29,6 +30,7 @@ class SettingsController extends Controller
 
         // Update settings
         SiteSetting::set('site_password_enabled', $request->boolean('site_password_enabled'), 'boolean', 'Enable site-wide password protection');
+        SiteSetting::set('site_login_required', $request->boolean('site_login_required'), 'boolean', 'Require login to access entire site');
         
         if ($request->filled('site_password')) {
             SiteSetting::set('site_password', $request->site_password, 'string', 'Site-wide password for visitor access');

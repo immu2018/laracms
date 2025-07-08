@@ -81,6 +81,18 @@
                                         @enderror
                                         <small class="form-hint">This message will be displayed to visitors on the password protection page.</small>
                                     </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-check form-switch">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   name="site_login_required" 
+                                                   value="1"
+                                                   {{ $settings['site_login_required'] ? 'checked' : '' }}>
+                                            <span class="form-check-label">Require Login to Access Site</span>
+                                        </label>
+                                        <small class="form-hint">When enabled, only logged-in users can access the site. Visitors will be redirected to login page.</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
